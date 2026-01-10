@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das cartas
@@ -14,32 +15,77 @@ int main() {
 
   // Área para entrada de dados da primeira carta
 
+  //uso de fgets pois temos cidades e estados com mais de uma palavra.
+  printf("PRIMEIRA CARTA\n");
   printf("Digite o estado da primeira carta: ");
-  scanf("%s", estado);
+  fgets(estado, 20, stdin);
+  //uso do fgets para todas strings para evitar lixo do scanf
   printf("Digite o código da primeira carta: ");
-  scanf("%s", codigo);
+  fgets(codigo, 5, stdin);
   printf("Digite o nome da cidade da primeira carta: ");
-  scanf("%s", nome);
+  fgets(nome, 20, stdin);
   printf("Digite o população da primeira carta: ");
   scanf("%d", &populacao);
   printf("Digite a área da primeira carta: ");
   scanf("%f", &area);
   printf("Digite o PIB da primeira carta: ");
-  scanf("%f", &pib);
+  scanf("%f", &pib);  
   printf("Digite o número de pontos turísticos da primeira carta: ");
   scanf("%d", &pontosturisticos);
 
+  // -- Removendo o \n das strings
+  estado[strcspn(estado, "\n")] = '\0';
+  codigo[strcspn(codigo, "\n")] = '\0';
+  nome[strcspn(nome, "\n")] = '\0';
 
   // Área para exibição dos dados da cidade da primeira carta
   
-  printf("Dados da primeira carta cadastrada:\n");
-  printf("Estado: %s", estado);
-  printf("Código: %s", codigo);
-  printf("Nome da cidade: %s" nome);
-  printf("Poulação: %d", populacao);
-  printf("Área: %f", area);
-  printf("PIB: %f", pib);
-  printf("Pontos turísticos: %d", pontosturisticos);
+  printf("\nDados da primeira carta cadastrada:\n");
+  printf("Estado: %s\n", estado);
+  printf("Código: %s\n", codigo);
+  printf("Nome da cidade: %s\n", nome);
+  printf("Poulação: %d habitantes\n", populacao);
+  printf("Área: %f km quadrados\n", area);
+  printf("PIB: R$ %.2f\n", pib);
+  printf("Pontos turísticos: %d\n\n", pontosturisticos);
+  //uso do getchar para limpar o lixo do scanf
+  getchar();
+
+  // Área para entrada de dados da segunda carta
+
+  //uso de fgets pois temos cidades e estados com mais de uma palavra.
+  printf("SEGUNDA CARTA\n");
+  printf("Digite o estado da segunda carta: ");
+  fgets(estado, 20, stdin);
+  //uso do fgets para todas strings para evitar lixo do scanf
+  printf("Digite o código da segunda carta: ");
+  fgets(codigo, 5, stdin);
+  printf("Digite o nome da cidade da segunda carta: ");
+  fgets(nome, 20, stdin);
+  printf("Digite o população da segunda carta: ");
+  scanf("%d", &populacao);
+  printf("Digite a área da segunda carta: ");
+  scanf("%f", &area);
+  printf("Digite o PIB da segunda carta: ");
+  scanf("%f", &pib);  
+  printf("Digite o número de pontos turísticos da segunda carta: ");
+  scanf("%d", &pontosturisticos);  
+
+  // -- Removendo o \n das strings
+  estado[strcspn(estado, "\n")] = '\0';
+  codigo[strcspn(codigo, "\n")] = '\0';
+  nome[strcspn(nome, "\n")] = '\0';
+
+  // Área para exibição dos dados da cidade da segunda carta
+  
+  printf("\nDados da segunda carta cadastrada:\n");
+  printf("Estado: %s\n", estado);
+  printf("Código: %s\n", codigo);
+  printf("Nome da cidade: %s\n", nome);
+  printf("Poulação: %d habitantes\n", populacao);
+  printf("Área: %f km quadrados\n", area);
+  printf("PIB: R$ %.2f\n", pib);
+  printf("Pontos turísticos: %d\n", pontosturisticos);
 
 return 0;
 } 
