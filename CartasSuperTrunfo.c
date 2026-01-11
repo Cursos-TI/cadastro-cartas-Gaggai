@@ -11,19 +11,17 @@ int main() {
 
   char estado[20], codigo[5], nome[20];
   int populacao, pontosturisticos;
-  float area, pib;
+  float area, pib, densidade, pibpercapita;
 
   // Área para entrada de dados da primeira carta
 
-  //uso de fgets pois temos cidades e estados com mais de uma palavra.
   printf("PRIMEIRA CARTA\n");
   printf("Digite o estado da primeira carta: ");
-  fgets(estado, 20, stdin);
-  //uso do fgets para todas strings para evitar lixo do scanf
+  scanf("%s", estado);
   printf("Digite o código da primeira carta: ");
-  fgets(codigo, 5, stdin);
+  scanf("%s", codigo);
   printf("Digite o nome da cidade da primeira carta: ");
-  fgets(nome, 20, stdin);
+  scanf("%s", nome);
   printf("Digite o população da primeira carta: ");
   scanf("%d", &populacao);
   printf("Digite a área da primeira carta: ");
@@ -33,10 +31,15 @@ int main() {
   printf("Digite o número de pontos turísticos da primeira carta: ");
   scanf("%d", &pontosturisticos);
 
-  // -- Removendo o \n das strings
+    //Removendo o \n das strings
   estado[strcspn(estado, "\n")] = '\0';
   codigo[strcspn(codigo, "\n")] = '\0';
   nome[strcspn(nome, "\n")] = '\0';
+
+    // Calcupo de Desnidade e PIB per capita
+  densidade = (float) populacao / area;
+  pibpercapita = (float) pib / populacao;
+  
 
   // Área para exibição dos dados da cidade da primeira carta
   
@@ -45,23 +48,21 @@ int main() {
   printf("Código: %s\n", codigo);
   printf("Nome da cidade: %s\n", nome);
   printf("Poulação: %d habitantes\n", populacao);
-  printf("Área: %f km quadrados\n", area);
+  printf("Área: %.2f km quadrados\n", area);
   printf("PIB: R$ %.2f\n", pib);
-  printf("Pontos turísticos: %d\n\n", pontosturisticos);
-  //uso do getchar para limpar o lixo do scanf
-  getchar();
+  printf("Pontos turísticos: %d\n", pontosturisticos);
+  printf("Densidade Populacional: %.2f\n", densidade);
+  printf("PIB per Capita: R$ %.2f\n\n", pibpercapita);
 
   // Área para entrada de dados da segunda carta
 
-  //uso de fgets pois temos cidades e estados com mais de uma palavra.
   printf("SEGUNDA CARTA\n");
-  printf("Digite o estado da segunda carta: ");
-  fgets(estado, 20, stdin);
-  //uso do fgets para todas strings para evitar lixo do scanf
-  printf("Digite o código da segunda carta: ");
-  fgets(codigo, 5, stdin);
-  printf("Digite o nome da cidade da segunda carta: ");
-  fgets(nome, 20, stdin);
+  printf("Digite o estado da primeira carta: ");
+  scanf("%s", estado);
+  printf("Digite o código da primeira carta: ");
+  scanf("%s", codigo);
+  printf("Digite o nome da cidade da primeira carta: ");
+  scanf("%s", nome);
   printf("Digite o população da segunda carta: ");
   scanf("%d", &populacao);
   printf("Digite a área da segunda carta: ");
@@ -71,10 +72,14 @@ int main() {
   printf("Digite o número de pontos turísticos da segunda carta: ");
   scanf("%d", &pontosturisticos);  
 
-  // -- Removendo o \n das strings
+    //Removendo o \n das strings
   estado[strcspn(estado, "\n")] = '\0';
   codigo[strcspn(codigo, "\n")] = '\0';
   nome[strcspn(nome, "\n")] = '\0';
+
+    // Calcupo de Desnidade e PIB per capita
+  densidade = (float) populacao / area;
+  pibpercapita = (float) pib / populacao;
 
   // Área para exibição dos dados da cidade da segunda carta
   
@@ -83,9 +88,11 @@ int main() {
   printf("Código: %s\n", codigo);
   printf("Nome da cidade: %s\n", nome);
   printf("Poulação: %d habitantes\n", populacao);
-  printf("Área: %f km quadrados\n", area);
+  printf("Área: %.2f km quadrados\n", area);
   printf("PIB: R$ %.2f\n", pib);
   printf("Pontos turísticos: %d\n", pontosturisticos);
+  printf("Densidade Populacional: %.2f\n", densidade);
+  printf("PIB per Capita: R$ %.2f\n", pibpercapita);
 
 return 0;
 } 
