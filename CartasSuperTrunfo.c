@@ -93,7 +93,7 @@ int main() {
   densidade2 = (float)populacao2 / area2;
   pibpercapita2 =  pib2 / (float)populacao2;
 
-  // Calculo do Super
+    // Calculo do Super
   super2 = populacao2 + area2 + pib2 + pibpercapita2 + pontosturisticos2 + (1 / densidade2);
 
   // Área para exibição dos dados da cidade da segunda carta
@@ -110,8 +110,11 @@ int main() {
   printf("PIB per Capita: R$ %.2f\n", pibpercapita2);
   printf("Super Poder: %.2f\n\n", super2);
 
-  // Área para exibição da comatação entre as cartas
-  printf("COMPARAÇÃO DAS CARTAS:\n");
+  // Área para exibição e compatação entre as cartas
+    
+    //exibição da compraração de cada atributo foi suspensa devido as novas especificações do exercidio
+  
+  /*printf("COMPARAÇÃO DAS CARTAS:\n");
   printf("População: Carta 1 venceu: %lu\n", populacao1 > populacao2);
   printf("Área: Carta 1 venceu: %d\n", area1 > area2);
   printf("PIB: Carta 1 venceu: %d\n", pib1 > pib2);
@@ -119,6 +122,18 @@ int main() {
   printf("Densidade Populacional: Carta 1 venceu: %d\n", densidade1 > densidade2);
   printf("PIB per Capita: Carta 1 venceu: %d\n", pibpercapita1 > pibpercapita2);
   printf("Super Poder: Carta 1 venceu: %d\n\n", super1 > super2);
+  */
+  
+    //escolhido população como fator de comparação  
+  printf("Comparação de cartas (Atributo: População)\n");
+  printf("Carta 1 - %s (%s): %lu habitantes\n", nome1, estado1, populacao1);
+  printf("Carta 2 - %s (%s): %lu habitantes\n", nome2, estado2, populacao2);
 
-return 0;
+  if(populacao1 > populacao2){
+    printf("Resultado: Carta 1 (%s) venceu!\n", nome1);
+  } else{
+    printf("Resultado: Carta 2 (%s) venceu!\n", nome2);
+  }
+
+  return 0;
 }
