@@ -10,16 +10,28 @@ int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
 
     //carta 1
-  char estado1[30], codigo1[5], nome1[30];
+  char estado1[30];
+  char codigo1[5];
+  char nome1[30];
   unsigned long int populacao1;
   int pontosturisticos1;
-  float area1, pib1, densidade1, pibpercapita1, super1;
+  float area1; 
+  float pib1; 
+  float densidade1; 
+  float pibpercapita1; 
+  float super1;
 
   //carta 2
-  char estado2[30], codigo2[5], nome2[30];
+  char estado2[30]; 
+  char codigo2[5]; 
+  char  nome2[30];
   unsigned long int populacao2;
   int pontosturisticos2;
-  float area2, pib2, densidade2, pibpercapita2, super2;
+  float area2; 
+  float pib2; 
+  float densidade2; 
+  float pibpercapita2; 
+  float super2;
 
    //variaveis do sistema
   int opacao;
@@ -48,11 +60,11 @@ int main() {
   codigo1[strcspn(codigo1, "\n")] = '\0';
   nome1[strcspn(nome1, "\n")] = '\0';
 
-    // Calculo de Densidade e PIB per capita
+    // Calculo de Densidade e PIB per capita da carta 1
   densidade1 = (float)populacao1 / area1;
   pibpercapita1 =  pib1 / (float)populacao1;
 
-    // Calculo do Super
+    // Calculo do Super da carta 1
   super1 = populacao1 + area1 + pib1 + pibpercapita1 + pontosturisticos1 + (1 / densidade1);
   
 
@@ -93,11 +105,11 @@ int main() {
   codigo2[strcspn(codigo2, "\n")] = '\0';
   nome2[strcspn(nome2, "\n")] = '\0';
 
-    // Calculo de Densidade e PIB per capita
+    // Calculo de Densidade e PIB per capita da carta 2
   densidade2 = (float)populacao2 / area2;
   pibpercapita2 =  pib2 / (float)populacao2;
 
-    // Calculo do Super
+    // Calculo do Super da carta 2
   super2 = populacao2 + area2 + pib2 + pibpercapita2 + pontosturisticos2 + (1 / densidade2);
 
   // Área para exibição dos dados da cidade da segunda carta
@@ -126,6 +138,8 @@ int main() {
   printf("7. Densidade Populacional\n");
 
   scanf("%d", &opacao); 
+
+  // Área para a comparação entre as cartas de acordo com a opção escolhida
 
   switch (opacao)
   {
